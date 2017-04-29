@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title> LED DEMO </title>
+    <style> 
+div{
+    text-align: center;
+}
+    button{
+    height: 100px;
+    width: 80%;
+    } 
+    h1{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1> The Amazing Light Show </h1>
+    <div>
+    <button id="light"> Toggle Light </button>
+    </div>
+    <script>
+    var lightButton = document.getElementById('light');
+    lightButton.addEventListener('click', ()=>{
+        var oReq  = new XMLHttpRequest();
+        oReq.open("GET", "/light/toggle");
+        oReq.send();
+      
+    });
+    </script>
+</body>
